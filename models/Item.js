@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const moongose = require("mongoose");
 const { Schema } = mongoose;
 
 const itemSchema = new Schema({
@@ -20,10 +20,15 @@ const itemSchema = new Schema({
   },
   isPopular: {
     type: Boolean,
+    default: false,
   },
   description: {
     type: String,
     required: true,
+  },
+  categoryId: {
+    type: ObjectId,
+    ref: "Category",
   },
   imageId: [
     {

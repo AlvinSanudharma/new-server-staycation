@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const moongose = require("mongoose");
 const { Schema } = mongoose;
 
 const activitySchema = new Schema({
@@ -16,6 +16,10 @@ const activitySchema = new Schema({
   },
   isPopular: {
     type: Boolean,
+  },
+  itemId: {
+    type: mongoose.ObjectId,
+    ref: "Item",
   },
 });
 

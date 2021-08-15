@@ -14,6 +14,10 @@ const featureSchema = new Schema({
     type: String,
     required: true,
   },
+  itemId: {
+    type: mongoose.ObjectId,
+    ref: "Item",
+  },
 });
 
 module.exports = mongoose.model("Feature", featureSchema);
