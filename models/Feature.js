@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
+const { ObjectId } = mongoose.Schema;
 
-const featureSchema = new Schema({
+const featureSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -15,7 +15,7 @@ const featureSchema = new Schema({
     required: true,
   },
   itemId: {
-    type: mongoose.ObjectId,
+    type: ObjectId,
     ref: "Item",
   },
 });

@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const { ObjectId } = mongoose.Schema;
 
-const categorySchema = new Schema({
+const categorySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
   itemId: [
     {
-      type: mongoose.ObjectId,
-      ref: "item",
+      type: ObjectId,
+      ref: "Item",
     },
   ],
 });

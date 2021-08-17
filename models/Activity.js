@@ -1,7 +1,7 @@
-const moongose = require("mongoose");
-const { Schema } = mongoose;
+const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Schema;
 
-const activitySchema = new Schema({
+const activitySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -18,7 +18,7 @@ const activitySchema = new Schema({
     type: Boolean,
   },
   itemId: {
-    type: mongoose.ObjectId,
+    type: ObjectId,
     ref: "Item",
   },
 });

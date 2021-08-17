@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
+const { ObjectId } = mongoose.Schema;
 
-const bookingSchema = new Schema({
+const bookingSchema = new mongoose.Schema({
   bookingStartDate: {
     type: Date,
     required: true,
@@ -29,7 +29,7 @@ const bookingSchema = new Schema({
   itemId: [
     {
       _id: {
-        type: mongoose.ObjectId,
+        type: ObjectId,
         ref: "Item",
         required: true,
       },
@@ -45,13 +45,13 @@ const bookingSchema = new Schema({
   ],
   memberId: [
     {
-      type: mongoose.ObjectId,
+      type: ObjectId,
       ref: "Member",
     },
   ],
   bankId: [
     {
-      type: mongoose.ObjectId,
+      type: ObjectId,
       ref: "Bank",
     },
   ],
