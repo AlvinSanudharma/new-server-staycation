@@ -20,7 +20,6 @@ mongoose.connect(
   }
 );
 
-app.use(cors());
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 // router admin
@@ -52,6 +51,8 @@ app.use(
   "/sb-admin-2",
   express.static(path.join(__dirname, "node_modules/startbootstrap-sb-admin-2"))
 );
+
+app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
