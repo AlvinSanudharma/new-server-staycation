@@ -37,7 +37,7 @@ module.exports = {
       const user = await Users.findOne({ username: username });
 
       if (!user) {
-        req.flash("alertMessage", "User yang anda masukan tidak ada");
+        req.flash("alertMessage", "User Tidak Ditemukan!");
         req.flash("alertStatus", "danger");
 
         res.redirect("/admin/signin");
